@@ -19,7 +19,7 @@ public class BlogServiceImpl implements BlogService {
     private BlogMapper blogMapper;
 
     @Override
-    public ArrayList<Blog> getALLBlog() {
+    public List<Blog> getALLBlog() {
         return blogMapper.getAllBlog();
     }
 

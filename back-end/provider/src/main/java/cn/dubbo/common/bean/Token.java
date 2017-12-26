@@ -1,8 +1,9 @@
 package cn.dubbo.common.bean;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Token {
+public class Token implements Serializable{
     private Integer tokenid;
 
     private String token;

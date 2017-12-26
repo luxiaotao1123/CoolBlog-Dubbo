@@ -8,6 +8,8 @@
 
     <dubbo:application name="consumer"/>
 
+    <dubbo:consumer timeout="5000"/>
+
     <dubbo:registry protocol="zookeeper" address="zookeeper://106.15.205.155:2181"/>
 
     <dubbo:reference id="blogService" interface="cn.dubbo.service.BlogService"/>

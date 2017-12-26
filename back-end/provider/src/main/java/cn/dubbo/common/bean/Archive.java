@@ -1,11 +1,12 @@
 package cn.dubbo.common.bean;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by liuwen on 2017/12/14.
  */
-public class Archive {
+public class Archive implements Serializable{
     private Integer blogid;
 
     private String title;

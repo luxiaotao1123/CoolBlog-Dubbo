@@ -1,11 +1,12 @@
 package cn.dubbo.common.bean;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
-public class BlogExample {
+public class BlogExample implements Serializable{
     protected String orderByClause;
 
     protected boolean distinct;

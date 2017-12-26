@@ -1,6 +1,8 @@
 package cn.dubbo.common.bean;
 
-public class Category {
+import java.io.Serializable;
+
+public class Category implements Serializable {
     private Integer labelid;
 
     private String label;
