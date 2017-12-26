@@ -1,14 +1,10 @@
-package cn.blog.controller;
+package cn.dubbo.controller;
 
 
-import cn.blog.bean.Blog;
-import cn.blog.bean.Handle;
-import cn.blog.bean.HandleExample;
-import cn.blog.dao.HandleMapper;
-import cn.blog.dao.TokenMapper;
-import cn.blog.service.BlogService;
-import cn.blog.service.TokenService;
-import cn.blog.utils.R1;
+import cn.dubbo.common.bean.Blog;
+import cn.dubbo.service.BlogService;
+import cn.dubbo.service.TokenService;
+import cn.dubbo.utils.R1;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.ApiImplicitParam;
@@ -20,9 +16,7 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping(value = "admin/")
@@ -32,22 +26,7 @@ public class AdminController {
     private BlogService blogService;
 
     @Autowired
-    private HandleMapper handleMapper;
-
-    @Autowired
-    private TokenMapper tokenMapper;
-
-    @Autowired
     private TokenService tokenService;
-
-    /*@ApiOperation(value = "拿到所有操作方式",notes = "")
-    @GetMapping(value = "handles")
-    public R1 ajaxHandle(){
-        Map<String, Object> map = new LinkedHashMap<String,Object>();
-        List<Handle> handleList = handleMapper.selectByExample(new HandleExample());
-        map.put("handle",handleList);
-        return R1.ok(map);
-    }*/
 
     @ApiOperation(value = "拿到所有博客（分页）",notes = "")
     @ApiImplicitParams({
@@ -115,7 +94,7 @@ public class AdminController {
     @PostMapping(value = "blog")
     public R1 postBlog(@RequestBody Blog blog, HttpServletRequest request){
         String token = request.getHeader("token");
-        int userId = tokenMapper.finduserIdByToken(token);
+        int userId = tokenService.getUserId(token);
         Date updateTime = new Date();
         blog.setStatus(1);
         blog.setUpdatetime(updateTime);

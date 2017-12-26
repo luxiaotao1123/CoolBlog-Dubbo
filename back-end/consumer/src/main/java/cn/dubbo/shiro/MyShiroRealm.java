@@ -1,7 +1,7 @@
-package cn.blog.shiro;
+package cn.dubbo.shiro;
 
-import cn.blog.bean.User;
-import cn.blog.service.UserService;
+import cn.dubbo.common.bean.User;
+import cn.dubbo.service.UserService;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;

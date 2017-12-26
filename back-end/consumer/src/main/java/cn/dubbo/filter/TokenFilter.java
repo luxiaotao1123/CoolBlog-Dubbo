@@ -1,6 +1,6 @@
-package cn.blog.filter;
+package cn.dubbo.filter;
 
-import cn.blog.service.TokenService;
+import cn.dubbo.service.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.*;

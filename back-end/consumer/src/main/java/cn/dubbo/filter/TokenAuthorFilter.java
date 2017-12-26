@@ -1,25 +1,15 @@
-package cn.blog.filter;
+package cn.dubbo.filter;
 
-import javax.servlet.annotation.WebFilter;
-
-
-import cn.blog.service.TokenService;
+import cn.dubbo.service.TokenService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.io.IOException;
-
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-
+import java.io.IOException;
 
 
 //@Component      //注入到IOC容器

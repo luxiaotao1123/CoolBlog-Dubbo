@@ -1,0 +1,44 @@
+package cn.dubbo.dao;
+
+import cn.dubbo.common.bean.Token;
+import cn.dubbo.common.bean.TokenExample;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
+
+public interface TokenMapper {
+    long countByExample(TokenExample example);
+
+    int deleteByExample(TokenExample example);
+
+    int deleteByPrimaryKey(Integer tokenid);
+
+    int insert(Token record);
+
+    int insertSelective(Token record);
+
+    List<Token> selectByExample(TokenExample example);
+
+    Token selectByPrimaryKey(Integer tokenid);
+
+    int updateByExampleSelective(@Param("record") Token record, @Param("example") TokenExample example);
+
+    int updateByExample(@Param("record") Token record, @Param("example") TokenExample example);
+
+    int updateByPrimaryKeySelective(Token record);
+
+    int updateByPrimaryKey(Token record);
+
+    //lxt
+    Token findByToken(Token token);
+
+    Token findByUserId(Integer userId);
+
+    int updateByToken(Token token);
+
+    int deleteByExpireTime(Token token);
+
+    String findByStringToken(String token);
+
+    int finduserIdByToken(String token);
+}
